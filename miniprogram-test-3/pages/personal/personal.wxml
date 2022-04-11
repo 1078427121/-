@@ -1,0 +1,88 @@
+<!--pages/personal/personal.wxml-->
+<view class="personal_view">
+  <view class="user_info_general">
+    <view class="img"><open-data type="userAvatarUrl" style="width:96rpx;height:96rpx;border-radius:50%;display: flex;overflow:hidden;text-align: center;"></open-data></view>
+    <view class="account">
+      <view><open-data type="userNickName"></open-data></view>
+    </view>
+    <button wx:if="{{!hasUserInfo && canIUse}}" class="nav" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button>
+    <view wx:if="{{hasUserInfo && canIUse}}" class="nav" bindtap="userDetail">个人信息<image src="../../images/personal_icon/arrow_right_white.png" style="width:30rpx;height:30rpx;padding-left:5rpx;"></image></view>
+  </view>
+ 
+  <view class="user_function_list">
+    <view class="line"></view>
+    <button class="item" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="{{5}}">
+      <view class="item_left item">
+        <view class="icon"><image src="../../images/personal_icon/notification.png" style="width:48rpx;height:48rpx;"></image></view>
+        <view class="item_title">我的消息</view>
+      </view>
+      <view class="item_right">
+        <view class="arrow"><image src="../../images/personal_icon/arrow_right.png" style="width:40rpx;height:40rpx;"></image></view>
+      </view>
+    </button>
+    <view class="line"></view>
+    <button class="item" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="{{1}}">
+      <view class="item_left item">
+        <view class="icon"><image src="../../images/personal_icon/history_record.png" style="width:48rpx;height:48rpx;"></image></view>
+        <view class="item_title">我的书籍</view>
+      </view>
+      <view class="item_right">
+        <view class="arrow"><image src="../../images/personal_icon/arrow_right.png" style="width:40rpx;height:40rpx;"></image></view>
+      </view>
+    </button>
+    <view class="line"></view>
+    <button class="item" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="{{2}}">
+      <view class="item_left item">
+        <view class="icon"><image src="../../images/personal_icon/book_reviews.png" style="width:48rpx;height:48rpx;"></image></view>
+        <view class="item_title">我的书评</view>
+      </view>
+      <view class="item_right">
+        <view class="arrow"><image src="../../images/personal_icon/arrow_right.png" style="width:40rpx;height:40rpx;"></image></view>
+      </view>
+    </button>
+    <view class="line"></view>
+    
+    <button class="item" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="{{3}}">
+      <view class="item_left item">
+        <view class="icon"><image src="../../images/personal_icon/paper_plane.png" style="width:48rpx;height:48rpx;"></image></view>
+        <view class="item_title">发布书籍</view>
+      </view>
+      <view class="item_right">
+        <view class="arrow"><image src="../../images/personal_icon/arrow_right.png" style="width:40rpx;height:40rpx;"></image></view>
+      </view>
+    </button>
+    <view class="line"></view>
+    <button class="item" open-type="getUserInfo" bindgetuserinfo="getUserInfo" data-index="{{4}}">
+      <view class="item_left item">
+        <view class="icon"><image src="../../images/personal_icon/edit_add.png" style="width:48rpx;height:48rpx;"></image></view>
+        <view class="item_title">新建书评</view>
+      </view>
+      <view class="item_right">
+        <view class="arrow"><image src="../../images/personal_icon/arrow_right.png" style="width:40rpx;height:40rpx;"></image></view>
+      </view>
+    </button>
+    <view class="line"></view>
+    <button class="item" open-type="feedback">
+      <view class="item_left item">
+        <view class="icon"><image src="../../images/personal_icon/feedback.png" style="width:48rpx;height:48rpx;"></image></view>
+        <view class="item_title">意见反馈</view>
+      </view>
+      <view class="item_right">
+        <view class="arrow"><image src="../../images/personal_icon/arrow_right.png" style="width:40rpx;height:40rpx;"></image></view>
+      </view>
+    </button>
+    <view class="line"></view>
+    <view class="item" bindtap="aboutUsDetail">
+      <view class="item_left item">
+        <view class="icon"><image src="../../images/personal_icon/about_us.png" style="width:48rpx;height:48rpx;"></image></view>
+        <view class="item_title">关于我们</view>
+      </view>
+      <view class="item_right">
+        <view class="arrow"><image src="../../images/personal_icon/arrow_right.png" style="width:40rpx;height:40rpx;"></image></view>
+      </view>
+    </view>
+    <view class="comment">感谢您的使用~</view>
+  </view>
+
+
+</view>

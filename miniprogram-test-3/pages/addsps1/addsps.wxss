@@ -1,0 +1,76 @@
+/* pages/addsps/addsps.wxss */
+page{
+  background-color: #efefef;
+}
+.flex-wrp{
+  display: flex;
+}
+.content_wrap{
+  background-color: #fff;
+}
+.content{
+  /*padding: 20rpx;*/
+  margin: 0 auto;
+}
+textarea{
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  min-height: 300rpx;
+  width: 100%;
+  color: #696969;
+}
+input{
+  height: 80rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #fff;
+  color: #696969;
+}
+input::after{
+  height: 80rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #fff;
+  color: #696969;
+}
+
+button{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.info_button{
+  color: #494949;
+  border: 0;
+  /*width:170px;*/
+  height:30px;
+  line-height:30px;
+  text-align:center;
+  font-size:35rpx；
+}
+.info_button::after{
+  border:0;
+}
+
+.submit_button{
+  margin-top: 30rpx;
+  background-color: #696969;
+  color: #fff;
+  width:170px;
+  height:30px;
+  line-height:30px;
+  text-align:center;
+  font-size:35rpx；
+}
+.placeholder{
+  color: #b6b6b6;
+  font-size: 35rpx;
+  /*padding-left: 20rpx;*/
+}
+.input_title{
+  font-size: 35rpx;
+  color: #696969;
+  /*margin-top: 10rpx;*/
+  margin: 10rpx;
+  padding-left: 10rpx;
+}

@@ -1,0 +1,65 @@
+<!--pages/addsps/addsps.wxml-->
+
+<view class="input_title">书籍名称：</view>
+<input name="bookname" placeholder-class="placeholder" placeholder='请输入书名（必填）' value='{{bookname}}' bindinput='in1'></input>
+<view class="input_title">本书作者：</view>
+<input name="authorname" placeholder-class="placeholder" placeholder='请输入本书作者（必填）' value='{{auther}}' bindinput='in2'></input>
+<view class="input_title">补充描述：</view>
+<view class="content_wrap">
+  <view class="content">
+    <textarea name="bookdetail" placeholder-class="placeholder" placeholder='请输入补充描述信息，如几成新、期望的价格等' value='{{bookdetail}}' bindinput='in3'></textarea> 
+  </view>
+</view>
+<view >
+  <button class="info_button" style='height:60rpx;line-height:60rpx;text-align:center;font-size:35rpx;display:flex;justify-content: center;align-items:center;' bindtap='onChangeShowState1'>选择校区<image class="arrow" src='/images/book_icon/arrow_down.png'></image></button>
+ </view>
+ <view class="bright789_view_hide{{showView1?'bright789_view_show':''}}">
+ <button 
+            wx:for="{{xiaoqu}}" 
+            wx:for-item="item" 
+            wx:key="item.index"  
+            bindtap="checkboxChange1" 
+            data-value="{{item.value}}" 
+            data-index="{{index}}"  
+            checked="{{item.selected}}"
+            class=" {{item.selected ? 'btn-selected' : 'btn'}}" >
+            {{item.title}} 
+ </button>
+ </view>
+ <view >
+  <button class="info_button" style='height:60rpx;line-height:60rpx;text-align:center;font-size:35rpx;display:flex;justify-content: center;align-items:center;' bindtap='onChangeShowState2'>选择专业<image class="arrow" src='/images/book_icon/arrow_down.png'></image></button>
+ </view>
+ <view class="bright789_view_hide{{showView2?'bright789_view_show':''}}" >
+ <button 
+            wx:for="{{zhuanye}}" 
+            wx:for-item="item" 
+            wx:key="item.index"  
+            bindtap="checkboxChange2" 
+            data-value="{{item.value}}" 
+            data-index="{{index}}"  
+            checked="{{item.selected}}"
+            class=" {{item.selected ? 'btn-selected' : 'btn'}}" >
+            {{item.title}} 
+ </button> </view>
+ <view >
+  <button class="info_button" style='height:60rpx;line-height:60rpx;text-align:center;font-size:35rpx;display:flex;justify-content: center;align-items:center;' bindtap='onChangeShowState3'>图书种类<image class="arrow" src='/images/book_icon/arrow_down.png'></image></button>
+ </view>
+ <view class="bright789_view_hide{{showView3?'bright789_view_show':''}}" >
+ <button 
+            wx:for="{{zhonglei}}" 
+            wx:for-item="item" 
+            wx:key="item.index"  
+            bindtap="checkboxChange3" 
+            data-value="{{item.value}}" 
+            data-index="{{index}}"  
+            checked="{{item.selected}}"
+            class=" {{item.selected ? 'btn-selected' : 'btn'}}" >
+            {{item.title}} 
+ </button> 
+</view>
+<button class="info_button" style='height:60rpx;line-height:60rpx;text-align:center;font-size:35rpx' bindtap='img'>上传图片（必填）</button>
+<view  wx:for="{{imagelist}}">
+<image src='{{imagelist[index]}}' style='margin-top:10rpx; margin-right:10rpx;width:100px;height:100px;background-color:#eeeeee' ></image>
+</view>
+<button class="submit_button" style='width:340rpx;height:60rpx;line-height:60rpx;text-align:center;font-size:35rpx;' bindtap='submit'>提交</button>
+<view class="line_bold"></view>

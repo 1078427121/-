@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/page/page",
+    "pages/page1/page",
+    "pages/personal/personal",
+    "pages/personal_detail/personal_detail",
+    "pages/my_sent_books/my_sent_books",
+    "pages/my_book_reviews/my_book_reviews",
+    "pages/about_us/about_us",
+    "pages/addsps/addsps",
+    "pages/detail/detail",
+    "pages/addsps1/addsps",
+    "pages/detail1/detail",
+    "pages/chat/chat",
+    "pages/my_message/my_message"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#494949",
+    "navigationBarTitleText": "中南书行",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#ffffff",
+    "color": "#898989",
+    "backgroundColor": "#494949",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tab_bar_icon/square_selected.png",
+        "iconPath": "images/tab_bar_icon/square_original.png",
+        "pagePath": "pages/page/page",
+        "text": "找书"
+      },
+      {
+        "selectedIconPath": "images/tab_bar_icon/book_review_selected.png",
+        "iconPath": "images/tab_bar_icon/book_review_original.png",
+        "pagePath": "pages/page1/page",
+        "text": "书评"
+      },
+      {
+        "selectedIconPath": "images/tab_bar_icon/user_selected.png",
+        "iconPath": "images/tab_bar_icon/user_original.png",
+        "pagePath": "pages/personal/personal",
+        "text": "个人"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

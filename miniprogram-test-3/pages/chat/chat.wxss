@@ -1,0 +1,147 @@
+/* pages/chat/chat.wxss */
+page{
+  background-color: #efefef;
+}
+.page_row{ 
+  display: flex;  
+  flex-direction: row;
+  background-color: #fff;
+  border-top: 1rpx solid #cccccc;
+  position:fixed;
+  bottom:0%;
+  padding-bottom: 30rpx;
+  width: 100%;
+}  
+
+.search{  
+  width: 85%;  
+  padding-top: 30rpx;
+  margin-left: 20rpx;
+}  
+.search_arr {  
+  /*border: 0.5px solid #d0d0d0;  */
+  border-radius: 10rpx;  
+  /*margin-left: 20rpx;*/ 
+  background-color: #efefef;
+}  
+.search_arr input{  
+  margin-left: 30rpx;  
+  height: 60rpx;  
+  border-radius: 10rpx; 
+  background-color: #efefef;
+  color: #898989;
+  font-size: 35rpx;
+}  
+
+.sousuo {  
+  margin-left: 15rpx;  
+  margin-right: 20rpx;
+  width: 10%;  
+  line-height: 150%;  
+  text-align: center;  
+  /*border: 0.5px solid #d0d0d0;  */
+  border-radius: 10rpx;  
+  height: 60rpx;  
+  margin-top: 30rpx;
+  /*color:#494949;
+  background-color: #fff;*/
+  font-size:37rpx;
+  color: #494949;
+}  
+.flex-wrp{
+  display: flex;
+  flex-direction:row;
+  width:100%;
+}
+.flex-wrp-reverse{
+  display: flex;
+  flex-direction:row-reverse;
+  width:100%;
+}
+
+button{
+  background-color: rgba(255,255,255,0);
+  border-radius: 0rpx;
+  padding: 0rpx;
+  margin: 0rpx;
+  display: inline-block;
+  line-height: 1;
+}
+button::after{ /*button的边框样式是通过::after方式实现的*/
+border:none;
+}
+.button-hover{ /*点击后样式*/
+color:#000;
+background-color: rgba(255,255,255,0);
+}
+.time_detail{
+  margin-top: 10rpx;
+  margin-left:5rpx;
+  font-size:24rpx;
+  color:#8a8a8a;
+}
+.time_detail_my{
+  margin-top: 10rpx;
+  margin-left:130rpx;
+  font-size:24rpx;
+  color:#8a8a8a;
+}
+.msg {
+  /* display: none; */
+  width: 70%;
+  font-size: 35rpx;
+  line-height: 60rpx;
+  padding: 10rpx 20rpx;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10rpx;
+  
+  color: #494949;
+  margin: 5rpx;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+  word-break:break-all;
+}
+.msg:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-bottom: 20rpx solid #fff;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  transform: rotate(-88deg);
+  position: absolute;
+  top: 20rpx;
+  left: -20rpx;
+}
+.msg_my {
+  /* display: none; */
+  width: 70%;
+  font-size: 35rpx;
+  line-height: 60rpx;
+  padding: 10rpx 20rpx;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10rpx;
+
+  right:-120rpx;
+
+  color: #494949;
+  margin: 5rpx;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+  word-break:break-all;
+
+}
+.msg_my:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-bottom: 20rpx solid #fff;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  transform: rotate(88deg);
+  position: absolute;
+  top: 20rpx;
+  right: -20rpx;
+}

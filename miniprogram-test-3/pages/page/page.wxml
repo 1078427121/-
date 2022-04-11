@@ -1,0 +1,99 @@
+<loading hidden="{{loading}}">
+  加载中...
+</loading>
+<button class="round-click" bindtap="newNavi" open-type="getUserInfo" bindgetuserinfo="getUserInfo">  
+    <image src="../../images/book_icon/add.png" style='height:90rpx; width:90rpx'/>
+</button>
+<!--<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>-->
+<view class='page_row' bindtap="suo">  
+  <view class="search">  
+    <view class="df search_arr">  
+      <!--<icon class="searchicon" size='20' type='search'></icon>-->
+      <input bindinput='inp' placeholder="请输入关键字" value="{{searchValue}}"/>  
+    </view>  
+  </view>  
+  <view class='sousuo' bindtap='conditionalsearch' style="display:flex;flex-direction:row;align-items:center;justify-content:center;">
+    <image src="../../images/book_icon/search4.png" style='height:50rpx; width:50rpx;'/>
+  </view>  
+</view> 
+
+
+<view class="tab" style='flex-direction:row margin-top:15px'>
+
+<view bindtap='bindShowMsg1'>
+  <button class='btn'>{{yixuan1.selected?yixuan1.data:'选择校区'}}<image style='height:24rpx;width:24rpx;' src='/images/book_icon/arrow_down.png'></image>
+  </button> 
+</view>
+<view class="select_box1" wx:if="{{select1}}">
+  <view class="select_one" 
+  bindtap="mySelect1" 
+  wx:for-item="item" 
+  wx:key="item.index"  
+  wx:for="{{xiaoqu}}" 
+  data-name="{{item.value}}">{{item.title}}</view>
+</view>
+    
+<view bindtap='bindShowMsg2'>
+  <button class='btn'>{{yixuan2.selected?yixuan2.data:'选择专业'}}
+    <image style='height:24rpx;width:24rpx;' src='/images/book_icon/arrow_down.png'></image>
+  </button>
+</view>
+<view class="select_box2" wx:if="{{select2}}">
+  <view class="select_one" 
+  bindtap="mySelect2" 
+  wx:for-item="item" 
+  wx:key="item.index"  
+  wx:for="{{zhuanye}}" 
+  data-name="{{item.value}}">{{item.title}}</view>
+</view>
+    
+<view bindtap='bindShowMsg3'>
+  <button class='btn'>{{yixuan3.selected?yixuan3.data:'选择种类'}}
+    <image style='height:24rpx;width:24rpx;' src='/images/book_icon/arrow_down.png'></image>
+  </button>
+</view>
+<view class="select_box3" wx:if="{{select3}}">
+  <view class="select_one" 
+  bindtap="mySelect3" 
+  wx:for-item="item" 
+  wx:key="item.index"  
+  wx:for="{{zhonglei}}" 
+  data-name="{{item.value}}">{{item.title}}</view>
+</view>
+</view> 
+<!--<view class="line"></view>-->
+
+
+<scroll-view  style="position:relative;top:180rpx;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" lower-threshold="800">
+	<view class="list flex-box" wx:for="{{films}}" wx:key='index' wx:for-item="item">
+		<view class="list-main flex-btn" bindtap='todetail' data-bean="{{item}}">
+      <view class="flex-wrp" style='flex-direction:row;align-items:center;justify-content:center;'>
+        <!--<image src="{{item.picture_id}}" class='image' style='height:40px; width:40px; border-radius: 25px;'/>-->
+        <image src="https://188.131.216.56/m_pro/min_img/{{item.cover}}" style='height:150rpx; width:20%;'/>
+        <view class="sender_info" style='margin-left:30rpx;width:80%;'>
+          <!--<view class='name'>{{item.wx_name}}</view>-->
+          <view style='font-size:37rpx;color: #494949;'>{{item.b_name}}</view>
+          <view style='margin-right:100px;font-size:25rpx;color:#8a8a8a;'>{{item.send_time}}</view>
+
+          <view class="flex-wrp" style='flex-direction:row;align-items:center;padding-top:20rpx;'>
+            <view class="item_left" style="display:flex;flex-direction:row;align-items:center;">
+              <!--<view style='font-size:25rpx;color:#8a8a8a;'>浏览{{item.looks}}次</view>-->
+              <image src="{{item.picture_id}}" class='image' style='height:50rpx; width:50rpx; border-radius: 25rpx;'/>
+              <view style='font-size:30rpx;color:#696969;padding-left:15rpx;'>{{item.wx_name}}</view>
+            </view>
+            <view class="item_right">
+              <view class="flex-wrp" style='flex-direction:row;align-items:center;'>
+                <image src="../../images/book_icon/looks.png" style='height:30rpx; width:30rpx'/>
+                <view style='margin-left:6rpx;margin-right:10px;font-size:30rpx;color:#696969;'>{{item.looks}}</view>
+                <image src="../../images/book_icon/comment.png" style='height:30rpx; width:30rpx '/>
+                <view style='margin-left:6rpx;font-size:30rpx;color:#696969;'>{{item.comments}}</view>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>  
+		</view>
+	</view>
+</scroll-view> 
+<view wx:if="{{count==0}}" class='no'>抱歉，您搜索的内容不存在</view>

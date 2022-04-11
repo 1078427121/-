@@ -1,0 +1,77 @@
+<view>
+  <view class="book_review_info">
+    <view class="flex-wrp" style='flex-direction:row;padding-top:30rpx;padding-bottom:30rpx;'>
+      <image src="{{tx}}" class='image' style='height:100rpx; width:100rpx'/>
+      <view style='margin-left:5px'>
+        <view class='name'>{{name}}</view>
+        <view class='time'>{{time}}</view>
+      </view>
+    </view>
+    <view class="flex-wrp" style='flex-direction:row;'>
+      <!--<image src='../../images/book_icon/book.png' style='height:25px; width:25px;margin-right:5px'></image>-->
+      <!--<view class="bname">评：{{bname}}</view>-->
+      <view class="item" >
+        <!--<view class="item_title">书名</view>-->
+        <image class="item_title" src='../../images/book_icon/book.png' style='height:40rpx; width:40rpx;margin-right:5px'></image>
+        <view class="info_content">{{bname}}</view>
+      </view>
+    </view>
+    <view class="line_review"></view>
+    <view style='margin-bottom:50rpx;'>
+      <image src='../../images/book_icon/quote2.png' style='height:30rpx; width:30rpx;margin-right:5px'></image>
+      <view class="content">{{content}}</view>
+      <view style="position:absolute;right:40rpx;padding-bottom:30rpx;">
+      <image src='../../images/book_icon/quoteEnd2.png' style='height:30rpx; width:30rpx;'></image>
+      </view>
+    </view>
+    <view class="line_review"></view>
+    <view class="flex-wrp" style='flex-wrap:wrap'>
+    <view  wx:for="{{imagelist}}">
+    <image src='http://188.131.216.56/m_pro/min_img/{{imagelist[index].pic_id}}' style='margin-top:10rpx; margin-right:10rpx;width:100px;height:100px;background-color:#eeeeee' ></image>
+  </view></view>
+    <view class="flex-wrp" style='flex-direction:row;margin-top:10px;padding-bottom:10px'>
+      <view class="item_left">
+        <view class='looks' style='width:180px;margin-right:40px;font-size:30rpx;color:#8a8a8a;'>浏览{{looks}}次</view>
+      </view>
+      <view class="item_right">
+        <view class="flex-wrp" style='flex-direction:row;align-items:center;'>
+          <image src="../../images/book_icon/thumbsUp.png" style='height:30rpx; width:30rpx ' bindtap='addz'/>
+          <view style='margin-left:6rpx;margin-right:10px;font-size:30rpx;color:#8a8a8a;' bindtap='addz'>{{dz}}</view>
+          <image src="../../images/book_icon/comment.png" style='height:30rpx; width:30rpx '/>
+          <view style='margin-left:6rpx;font-size:30rpx;color:#8a8a8a;'>{{pl}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="comment_list" style="margin-bottom:120rpx;">
+    <scroll-view scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" lower-threshold="800">
+      <view class="comment_title">评论列表</view>
+      <view class="line_review"></view>
+      <view class="list flex-box" wx:for="{{pls}}">
+        <view class="list-main flex-btn">
+          <view class="flex-wrp" style='flex-direction:row'>
+            <image src="{{item.s_touxiang}}" class='image' style='height:100rpx; width:100rpx'/>
+            <view class="sender_info" style='margin-left:5px;width:83%;'>
+              <view class='name'>{{item.wx_name}}</view>
+              <view class='time_detail1'>{{item.time}}</view>
+              <view class="comment_content_detail1">{{item.content}}</view>
+            </view>
+          </view>
+          <!--<view style='margin-top:10px;color:#494949;'>{{item.content}}</view>-->
+        </view>
+      </view>
+      <view wx:if="{{pl==0}}" class='no'>快来添加第一条评论吧</view>
+    </scroll-view> 
+  </view>
+
+  <view class='page_row'>  
+    <view class="search">  
+      <view class="df search_arr">  
+        <input placeholder='写评论' bindinput='inp' value='{{inputValue}}'></input>  
+      </view>  
+    </view>  
+    <button class='sousuo' open-type="getUserInfo" bindgetuserinfo="getUserInfo">发送</button>  
+  </view> 
+
+</view>

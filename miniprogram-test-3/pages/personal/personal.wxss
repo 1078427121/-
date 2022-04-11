@@ -1,0 +1,109 @@
+/* pages/personal/personal.wxss */
+.personal_view{
+  background-color: #efefef;
+  height:100vh;
+}
+
+.user_info_general{
+  height: 140rpx;
+  background-color: #494949;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+.img{
+  margin-left: 20rpx;
+}
+.account{
+  width:70%;
+  color: #ffffff;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 37rpx;
+}
+.nav{
+  width: 240rpx;
+  color: #ffffff;
+  font-size: 30rpx;
+  margin-top: 6rpx;
+  margin-right:20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.item{
+  background-color: #ffffff;
+  display:flex;
+  flex-direction:row;
+  height: 100rpx;
+  align-items: center;
+  position: relative;
+  padding-left:10rpx;
+  padding-right:10rpx;
+  text-align:left;
+  text-decoration:none;
+  border: none;
+  border-radius: 0;
+}
+.item::after {
+  border: none;
+  border-radius: 0;
+}
+
+.item_left{
+  flex: 1; /* 重要 */
+  align-items:center;
+}
+item_right{
+  position: relative;
+  align-items:center;
+}
+.item_title{
+  width:40%;
+  color: #494949;
+  font-size: 35rpx;
+  padding-left: 30rpx;
+}
+.line{
+  height: 16rpx;
+  background-color: #efefef;
+  opacity: 0.2;
+}
+.comment{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  padding-top: 20rpx;
+  color: #b6b6b6;
+  font-size: 30rpx;
+}
+.icon{
+  padding-left: 30rpx;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+.arrow{
+  padding-right: 30rpx;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+button{
+  background-color: rgba(255,255,255,0);
+  border-radius: 0rpx;
+  padding: 0rpx;
+  margin: 0rpx;
+  display: inline-block;
+  line-height: 1;
+}
+button::after{ /*button的边框样式是通过::after方式实现的*/
+border:none;
+}
+.button-hover{ /*点击后样式*/
+color:#000;
+background-color: rgba(255,255,255,0);
+}

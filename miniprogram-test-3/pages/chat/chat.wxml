@@ -1,0 +1,36 @@
+<!--pages/chat/chat.wxml-->
+<loading hidden="{{loading}}">
+  加载中...
+</loading>
+<view>
+  <view style="margin-bottom:120rpx;margin-top:30rpx;">
+    <scroll-view scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" lower-threshold="800">
+    <view wx:for="{{cs}}" style='padding:10rpx 30rpx;'>
+      <view wx:if="{{item.u1!=u1}}" class="flex-wrp">
+        <image src="{{item.u1_tx}}" class='image' style='height:100rpx; width:100rpx; border-radius: 50rpx;'/>
+        <view style="margin-left:25rpx;margin-top:20rpx;width:83%;">
+          <view class="msg">{{item.content}}</view>
+          <view class="time_detail">{{item.time}}</view>
+        </view>
+      </view>
+
+      <view wx:elif="{{item.u1==u1}}" class="flex-wrp-reverse">
+        <image src="{{item.u1_tx}}" class='image' style='height:100rpx; width:100rpx; border-radius: 50rpx;'/>
+        <view style="margin-right:25rpx;margin-top:20rpx;width:83%;">
+          <view class="msg_my">{{item.content}}</view>
+          <view class="time_detail_my">{{item.time}}</view>
+        </view>
+      </view>
+    </view>
+    </scroll-view>
+  </view>
+  
+  <view class='page_row'>  
+    <view class="search">  
+      <view class="df search_arr">  
+        <input bindinput='inp' value='{{inputValue}}'></input>  
+      </view>  
+    </view>  
+    <button class='sousuo' bindtap='fs'>发送</button>  
+  </view> 
+</view>

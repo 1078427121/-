@@ -1,0 +1,29 @@
+<!--pages/my_message/my_message.wxml-->
+<view class="comment_list" style="margin-bottom:120rpx;">
+    <scroll-view scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" lower-threshold="800">
+      <view class="line"></view>
+      <view class="list flex-box" wx:for="{{cs}}">
+        <view class="list-main flex-btn">
+
+          <navigator wx:if="{{item.u1==myid}}" url="../../pages/chat/chat?u1={{myid}}&u2={{item.u2}}&u1_tx={{myimg}}&u2_tx={{item.u2_tx}}&name={{item.u2_name}}" class="flex-wrp" style='flex-direction:row;padding: 20rpx 30rpx;'>
+            <image src="{{item.u2_tx}}" class='image' style='height:100rpx; width:100rpx; border-radius: 50rpx;'/>
+            <view class="sender_info" style='margin-left:30rpx;width:80%;'>
+              <view class='name'>{{item.u2_name}}</view>
+              <view class="time_detail">{{item.time}}</view>
+              <view class="comment_content_detail">{{item.content}}</view>
+            </view>
+          </navigator>
+          <navigator wx:else url="../../pages/chat/chat?u1={{myid}}&u2={{item.u1}}&u1_tx={{myimg}}&u2_tx={{item.u1_tx}}&name={{item.u1_name}}" class="flex-wrp" style='flex-direction:row;padding: 20rpx 30rpx;'>
+            <image src="{{item.u1_tx}}" class='image' style='height:100rpx; width:100rpx; border-radius:50rpx;'/>
+            <view class="sender_info" style='margin-left:5px;width:83%;'>
+              <view class='name'>{{item.u1_name}}</view>
+              <view class="time_detail">{{item.time}}</view>
+              <view class="comment_content_detail">{{item.content}}</view>
+            </view>
+          </navigator>
+          
+        <view class="line"></view>
+        </view>
+      </view>
+    </scroll-view> 
+  </view>

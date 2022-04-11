@@ -1,0 +1,28 @@
+/* pages/my_message/my_message.wxss */
+
+.line{
+  height: 1px;
+  background-color: #cccccc;
+  opacity: 0.2;
+}
+
+.flex-wrp{
+  display: flex;
+}
+.name{
+  color: #494949;
+}
+.time_detail{
+  font-size:30rpx;
+  color:#8a8a8a;
+}
+.comment_content_detail{
+  color: #494949;
+  font-size: 35rpx;
+  padding-top: 10rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  word-wrap:break-word;
+  word-break:break-all;
+}

@@ -1,0 +1,11 @@
+<!--pages/about_us/about_us.wxml-->
+<view class="about_us_view">
+  <view class="image"><image src="../../images/personal_icon/us_img.png" style="width:200rpx;height:200rpx;"></image></view>
+  <view class="text">CSU传书是由中南大学学生自主开发的网络书友社群平台，旨在为广大学生提供二手书籍交易、发表书评、以书会友等多种服务。</view>
+  <view class="text" style="padding-top:20rpx;">您可以在本小程序中：</view>
+  <view class="text">1.发布二手书籍交易信息</view>
+  <view class="text">2.查看他人等待交易的书籍信息，联系对方获得想要的书籍</view>
+  <view class="text">3.发表您对某本书的见解</view>
+  <view class="text">4.查看他人的书评，并进行评论互动</view>
+  <view class="text" style="padding-top:20rpx;">感谢您的使用，如有更多建议，请在意见反馈中告诉我们，谢谢！</view>
+</view>

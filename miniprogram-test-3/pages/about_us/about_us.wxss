@@ -1,0 +1,21 @@
+/* pages/about_us/about_us.wxss */
+.about_us_view{
+  background-color: #efefef;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  line-height: 50rpx;
+}
+.image{
+  padding: 50rpx;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+.text{
+  width: 80%;
+  color: #696969;
+  font-size: 35rpx;
+  /*text-align: center;*/
+}

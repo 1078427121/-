@@ -1,0 +1,16 @@
+<!--pages/addsps/addsps.wxml-->
+<view class="input_title">书籍名称：</view>
+<input class='bookname' placeholder-class="placeholder" placeholder='请输入您要推荐的书名(必填）' value='{{bookname}}' bindinput='in1'></input>
+<view class="input_title">书评内容：</view>
+<view class="content_wrap">
+  <view class="content">
+    <textarea class='bookreview' maxlength="0" placeholder-class="placeholder" placeholder='请输入书评(必填）' value='{{bookcomment}}' bindinput='in2'></textarea> 
+  </view>
+</view>
+<view class="flex-wrp" style='flex-wrap:wrap'>
+  <view  wx:for="{{imagelist}}">
+  <image bindtap='preview' src='{{imagelist[index]}}' style='margin-top:10rpx; margin-right:10rpx;width:100px;height:100px;background-color:#eeeeee' ></image>
+  </view>
+</view>
+<button class="info_button" bindtap='img' style='height:60rpx;line-height:60rpx;text-align:center;font-size:35rpx'>添加图片</button>
+<button class="submit_button" bindtap='submit' style='width:340rpx;height:60rpx;line-height:60rpx;text-align:center;font-size:35rpx'>提交</button>

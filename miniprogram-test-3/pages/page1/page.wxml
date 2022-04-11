@@ -1,0 +1,52 @@
+<loading hidden="{{loading}}">
+  加载中...
+</loading>
+<button class="round-click" bindtap="newNavi" open-type="getUserInfo" bindgetuserinfo="getUserInfo">  
+    <image src="../../images/personal_icon/edit_add.png" style='height:90rpx; width:90rpx'/>
+</button>
+<view class='page_row' bindtap="suo">  
+  <view class="search">  
+    <view class="df search_arr">  
+      <!--<icon class="searchicon" size='20' type='search'></icon>--> 
+      <input placeholder="请输入关键字" bindinput='inp' value="{{searchValue}}"/>  
+    </view>  
+  </view>  
+  <view bindtap='ss' class='sousuo' style="display:flex;flex-direction:row;align-items:center;justify-content:center;">
+    <image src="../../images/book_icon/search4.png" style='height:50rpx; width:50rpx;'/>
+  </view>  
+</view> 
+
+
+<scroll-view scroll-y="true" style="position:relative;top:100rpx;" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" lower-threshold="800">
+	<view class="list flex-box" wx:for="{{films}}" wx:key='index' wx:for-item="item">
+		<view class="list-main flex-btn" bindtap='todetail' data-bean="{{item}}">
+      <view class="flex-wrp" style='flex-direction:row'>
+        <image src="{{item.s_touxiang}}" class='image' style='height:80rpx; width:80rpx'/>
+        <view style='margin-left:30rpx'>
+          <view class='name'>{{item.s_name}}</view>
+          <view class='time'>{{item.time}}</view>
+        </view>
+      </view>
+      <view class="flex-wrp" style='flex-direction:row;'>
+        <!--<image src='../../images/book_icon/book.png' style='height:20px; width:20px;margin-top:10px;margin-right:5px'></image>-->
+        <view class='bname' style="display:flex;flex-direction:row;align-items:center;"><image src='../../images/book_icon/book.png' style='height:40rpx; width:40rpx;margin:10rpx;'></image>{{item.b_name}}</view>
+      </view>
+      <view class='one_line' style="margin:10rpx 0rpx;padding:0rpx 10rpx;font-size:30rpx;color:#898989;">{{item.content}}</view>
+
+      <view class="flex-wrp float:right" style='flex-direction:row;'>
+        <view class="item_left">
+          <view class='looks' style='margin-right:40px;width:180px;color:#696969;'>浏览{{item.looks}}次</view>
+        </view>
+        <view class="item_right">
+          <view class="flex-wrp"  style='flex-direction:row;align-items:center;'>
+            <image src="../../images/book_icon/thumbsUp.png" style='height:30rpx; width:30rpx'/>
+            <view style='margin-left:6rpx;margin-right:10px;font-size:30rpx;color:#696969;'>{{item.goods}}</view>
+            <image src="../../images/book_icon/comment.png" style='height:30rpx; width:30rpx '/>
+            <view style='margin-left:6rpx;font-size:30rpx;color:#696969;'>{{item.comments}}</view>
+          </view>
+        </view>
+      </view>
+		</view>
+	</view>
+</scroll-view> 
+<view wx:if="{{count==0}}" class='no'>抱歉，您搜索的内容不存在</view>

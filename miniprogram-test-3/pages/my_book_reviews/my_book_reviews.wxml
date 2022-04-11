@@ -1,0 +1,38 @@
+<!--pages/my_book_reviews/my_book_reviews.wxml-->
+<view class="personal_view">
+  <view class="user_info_general">
+    <view class="img"><open-data type="userAvatarUrl" style="width:96rpx;height:96rpx;border-radius:50%;display: flex;overflow:hidden;text-align: center;"></open-data></view>
+    <view class="account">
+      <view><open-data type="userNickName"></open-data></view>
+      <view style="padding-left:10rpx;">的书评</view>
+    </view>
+  </view>
+
+  <view class="torch_lists">
+    <view class="item_list">
+      <block wx:for="{{bookReviewList}}" wx:key="bookReview" item="item">
+        <scroll-view scroll-x="{{true}}" class="item_background" scroll-left="{{scrollLeft}}">
+          <view class="item" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" data-index="{{index}}">
+            <view class="content" bindtap='itemDetail' data-index="{{index}}">
+              <view class="main_content">
+                <view class="main_content_title">
+                  <view class="one_line" bindtap="itemDetail" style="width:800rpx;padding-right:20rpx;">{{item.book_name}}</view>
+                  <!--<view class="delete" data-index="{{index}}" bindtap="deleteItem">删除</view>-->
+                </view>
+                <view class="one_line" bindtap="itemDetail" style="font-size:30rpx;color:#898989;">{{item.book_detail}}</view>
+              </view>
+              <view class="info_content" bindtap="itemDetail">
+                <view style="width:266rpx;">{{item.book_likes}} 点赞</view>
+                <view style="width:266rpx;">{{item.book_comments}} 评论</view>
+                <view style="width:268rpx;">{{item.book_browse}} 浏览</view>
+                <view class="one_line_cut" style="width:280rpx;">{{item.show_time}}</view>
+              </view>
+            </view>
+            <view class="remove" bindtap="deleteItem" data-index="{{index}}"><image src="../../images/personal_icon/delete.png" style="width:80rpx;height:80rpx;"></image></view>
+          </view>
+        </scroll-view>
+      </block>
+    </view>
+  </view>
+  <view class="line"></view>
+</view>

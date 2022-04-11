@@ -1,0 +1,95 @@
+<view>
+  <view class="book_info">
+    <view class="flex-wrp" style='flex-direction:row;padding-top:30rpx;padding-bottom:30rpx;'>
+      <image src="{{picture_id}}" class='image' style='height:100rpx; width:100rpx;border-radius: 50rpx;'/>
+      <view class="sender_info" style='margin-left:5px'>
+        <view class='name'>{{name}}</view>
+        <view class="time" style='margin-right:180rpx;font-size:30rpx;color:#8a8a8a;'>{{time}}</view>
+      </view>
+      <view class="nav" wx:if="{{flag==1}}" bindtap='chat'>联系TA</view>
+    </view>
+    <view class="item_adjust">
+      <view class="item_title">书名</view>
+      <view class="info_content">{{bname}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item_adjust">
+      <view class="item_title">作者</view>
+      <view class="info_content">{{auther}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item_adjust">
+      <view class="item_title">标签</view>
+      <view class="tag">{{tab}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item_adjust">
+      <view class="item_title">手机</view>
+      <view class="info_content">{{phone?phone:'未填写'}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item_adjust">
+      <view class="item_title">描述</view>
+      <view class="info_content">{{descrip}}</view>
+    </view>
+    <view class="line"></view>
+    <view class="item_adjust">
+      <view class="item_title">图片</view>
+      <view class="flex-wrp" style='flex-wrap:wrap'>
+        <view  wx:for="1">
+        <image src='http://188.131.216.56//m_pro//min_img//{{imagelist}}' style='margin-top:10rpx; margin-right:10rpx;width:100px;height:100px;background-color:#eeeeee' ></image>
+        </view>
+      </view>
+    </view>
+    <view class="line"></view>
+
+    <view class="flex-wrp" style='flex-direction:row;align-items:center;margin-top:20rpx;padding-bottom:20rpx'>
+      <view class="item_left">
+          <view style='margin-left:6rpx;font-size:30rpx;color:#8a8a8a;'>浏览{{looks}}次</view>
+      </view>
+      <view class="item_right">
+        <view class="flex-wrp" style='flex-direction:row;align-items:center;'>
+          <image src="../../images/book_icon/comment.png" style='height:30rpx; width:30rpx '/>
+          <view style='margin-left:6rpx;font-size:30rpx;color:#8a8a8a;'>{{pl}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="comment_list" style="margin-bottom:120rpx;">
+    <scroll-view scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" lower-threshold="800">
+      <view class="comment_title">评论列表</view>
+      <view class="line"></view>
+      <view class="list flex-box" wx:for="{{pls}}">
+        <view class="list-main flex-btn">
+          <view class="flex-wrp" style='flex-direction:row;padding-top:30rpx;'>
+            <image src="{{item.s_touxiang}}" class='image' style='height:100rpx; width:100rpx; border-radius: 50rpx;'/>
+            <view class="sender_info" style='margin-left:5px;width:83%;'>
+              <view class='name'>{{item.wx_name}}</view>
+              <view class="time_detail">{{item.time}}</view>
+              <view class="comment_content_detail">{{item.content}}</view>
+            </view>
+          </view>
+          <!--<view class="comment_content">{{item.content}}</view>-->
+        </view>
+      </view>
+      <view wx:if="{{pl==0}}" class='no'>快来添加第一条评论吧</view>
+    </scroll-view> 
+  </view>
+
+  <!--<view class="view-pl" style='flex-direction:row '>
+    <input class= 'input-pl' placeholder='写评论' bindinput='inp' value='{{inputValue}}'></input>
+    <view class='view2-pl' bindtap='addpl'>确认</view>
+  </view>-->
+
+  <view class='page_row'>  
+    <view class="search">  
+      <view class="df search_arr">  
+        <input placeholder='写评论' bindinput='inp' value='{{inputValue}}'></input>  
+      </view>  
+    </view>  
+    <button class='sousuo' open-type="getUserInfo" bindgetuserinfo="getUserInfo">发送</button>  
+  </view> 
+
+</view>

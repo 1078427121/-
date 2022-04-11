@@ -1,0 +1,118 @@
+/* pages/my_book_reviews/my_book_reviews.wxss */
+.personal_view{
+  background-color: #efefef;
+  height:100vh;
+}
+.torch_lists{
+  background-color: #efefef;
+  /*margin-top: 8px;*/
+}
+.user_info_general{
+  height: 140rpx;
+  background-color: #494949;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+.img{
+  margin-left: 20rpx;
+}
+.account{
+  width:70%;
+  color: #ffffff;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 37rpx;
+}
+/*
+.nav{
+  width: 240rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}
+*/
+.main_content{
+  padding-bottom: 16rpx;
+}
+.main_content_title{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  font-size: 35rpx;
+  color: #494949;
+}
+.info_content{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  font-size: 24rpx;
+  color: #494949;
+}
+.item_list{
+  width:100%;
+  margin: 0 auto;
+  background-color: #efefef;
+  /*border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-bottom: 10px;*/
+}
+.item_background{
+  width:95%;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  padding-top: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+.item{
+  width:95%;
+  height: 140rpx;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 16rpx;
+}
+.one_line{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.one_line_cut{
+  overflow:hidden;
+  text-overflow:clip;
+  white-space:nowrap;
+}
+.line{
+  height: 16rpx;
+  background-color: #efefef;
+}
+.delete{
+  width: 120rpx;
+  height: 45rpx;
+  font-size: 24rpx;
+  border-width: 1rpx 1rpx 1rpx 1rpx;
+  border-color: #797979;
+  border-style: solid;
+  background-color: #ffffff;
+  color: #797979;
+  /*border-radius: 98rpx;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.remove{  
+  width: 160rpx;  
+  height: 100%;  
+  background-color: #efefef; 
+  color: white; 
+  position: absolute;
+  top: 34rpx;  
+  right: -160rpx;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;  
+  justify-items: center;
+}  

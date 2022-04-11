@@ -1,0 +1,39 @@
+<!--pages/personal_detail/personal_detail.wxml-->
+<view class="personal_detail_view">
+  <view class="user_info_general">
+    <view class="img"><open-data type="userAvatarUrl" style="width:48px;height:48px;border-radius:50%;display: flex;overflow:hidden;text-align: center;"></open-data></view>
+    <view class="account">
+      <view><open-data type="userNickName"></open-data></view>
+    </view>
+    <view class="reset" bindtap="resetUserInfo">保存</view>
+  </view>
+  <view class="user_info_detail">
+    <view class="item" style="padding-right:50rpx;">
+      <view class="item_title">姓名</view>
+      <input name="userName" class="item_content" placeholder="{{localUserName}}" value="{{tempUserName}}" bindfocus="focusName" bindblur="blurName" bindinput="getTempUserName"/>
+      <view bindtap="clearName"><image src="../../images/personal_icon/delete.png" style="width:30rpx;height:30rpx;"></image></view>
+    </view>
+    <view class="line"></view>
+    <view class="item" style="padding-right:50rpx;">
+      <view class="item_title">学号</view>
+      <input name="userStudentID" class="item_content" placeholder="{{localStudentID}}" value="{{tempStudentID}}" bindfocus="focusStudentID" bindblur="blurStudentID" bindinput="getTempStudentID"/>
+      <view bindtap="clearStudentID"><image src="../../images/personal_icon/delete.png" style="width:30rpx;height:30rpx;"></image></view>
+    </view>
+    <view class="line"></view>
+    <!-->
+    <view class="item">
+      <view class="item_title">微信号</view>
+      <input name="userWXCode" class="item_content" placeholder="{{localWXCode}}" bindfocus="focusWXCode" bindblur="blurWXCode" bindinput="getTempWXCode"/>
+    </view>
+    <view class="line"></view>
+    </-->
+    <view class="item" style="padding-right:50rpx;">
+      <view class="item_title">手机号</view>
+      <input name="userPhone" class="item_content" placeholder="{{localPhone}}" value="{{tempPhone}}" bindfocus="focusPhone" bindblur="blurPhone" bindinput="getTempPhone"/>
+      <view bindtap="clearPhone"><image src="../../images/personal_icon/delete.png" style="width:30rpx;height:30rpx;"></image></view>
+    </view>
+    <view class="line"></view>
+    <view class="comment">点击文本框即可修改个人信息</view>
+    <view class="tishi" wx:if="{{flag==1}}">手机号格式不合法</view>
+  </view>
+</view>
